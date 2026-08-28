@@ -1,6 +1,7 @@
-xDomain.in final marketplace landing page
-- Only BeGrow.in and DropMeNow.xyz are shown.
-- Buy buttons open their Sedo domain pages.
-- No fake listings, search UI, list-domain CTA, or extra marketplace sections.
-- Responsive mobile design with lightweight CSS-only glow/shine animations.
-- Smooth scrolling enabled.
+xDomain.in reference-style landing page
+Only real domains shown:
+1. BeGrow.in -> Sedo
+2. DropMeNow.xyz -> Sedo
+
+No fake listings or extra marketplace sections.
+Lightweight CSS-only effects, responsive layout, and smooth scrolling.
