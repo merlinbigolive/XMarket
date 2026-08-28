@@ -15,7 +15,7 @@ header{height:92px;display:flex;align-items:center;border-bottom:1px solid #159c
 .head{display:flex;align-items:center;justify-content:space-between}.logo{font-size:34px;font-weight:900;letter-spacing:-2.2px;text-decoration:none;border:0;border-bottom:0;box-shadow:none;outline:0}.logo b{color:#16bfff;text-decoration:none;border:0}.logo .c{color:#ffffff;text-decoration:none;border:0}.logo .i{color:#16bfff;text-decoration:none;border:0}
 .trust{display:flex;gap:14px;align-items:center;color:#c1d0e3;font-size:14px}.shield{width:25px;height:25px;border:2px solid #1daaff;border-radius:7px;display:grid;place-items:center;color:#31caff;font-size:14px}
 .hero{text-align:center;padding:48px 0 35px;position:relative}.hero:before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:760px;height:420px;background:radial-gradient(circle,#006eff2c,transparent 66%);filter:blur(12px);z-index:-1}
-.bigx{font-family:Arial Black,Arial,sans-serif;font-size:160px;line-height:.82;font-weight:1000;font-style:italic;letter-spacing:-18px;background:linear-gradient(110deg,#02132f 0%,#06376d 25%,#0b63b6 43%,#23b9ff 50%,#0b63b6 57%,#06376d 76%,#02132f 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:2px #0b74c9;text-shadow:0 0 8px #006dff88,0 0 24px #006dff55;position:relative;animation:xshine 3.2s linear infinite}
+.bigx{font-family:Arial Black,Arial,sans-serif;font-size:190px;line-height:.82;font-weight:1000;font-style:normal;letter-spacing:-10px;display:block;text-align:center;background:linear-gradient(110deg,#02132f 0%,#06376d 25%,#0b63b6 43%,#23b9ff 50%,#0b63b6 57%,#06376d 76%,#02132f 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:2px #0b74c9;text-shadow:0 0 8px #006dff88,0 0 24px #006dff55;position:relative;animation:xshine 3.2s linear infinite}
 .brand{font-size:78px;line-height:1;margin:20px 0 18px;font-weight:900;letter-spacing:-5px}.brand .blue{color:#ffffff;text-shadow:none}.brand .white{color:#f7f9ff}
 .tag{font-size:30px;line-height:1.4;color:#e8f2ff;margin:0 auto;max-width:780px}.tag strong{color:#16bfff}
 .traits{display:flex;justify-content:center;align-items:center;gap:19px;margin:36px 0 42px;color:#72cfff;font-size:11px;letter-spacing:5px}.line{width:120px;height:1px;background:#19aaff;box-shadow:0 0 9px #008cff}
@@ -32,7 +32,7 @@ footer{border-top:1px solid #178cff22;padding:30px 0;color:#9bb0c8}.foot{display
 @keyframes shine{0%,15%{left:-110px}58%,100%{left:115%}}@keyframes xshine{0%{background-position:200% 0;text-shadow:0 0 8px #006dff66,0 0 18px #006dff33}45%{background-position:0 0;text-shadow:0 0 14px #008cffaa,0 0 34px #006dff66}100%{background-position:-200% 0;text-shadow:0 0 8px #006dff66,0 0 18px #006dff33}}
 @media(max-width:760px){
 .wrap{width:calc(100% - 28px)}header{height:70px}.logo{font-size:25px}.trust{font-size:10px;gap:7px}.shield{width:21px;height:21px}
-.hero{padding:38px 0 20px}.bigx{font-size:100px}.brand{font-size:48px;letter-spacing:-3px;margin:17px 0}.tag{font-size:20px}.traits{gap:9px;font-size:8px;letter-spacing:3px;margin:28px 0}.line{width:55px}.curve{height:75px}
+.hero{padding:38px 0 20px}.bigx{font-size:125px}.brand{font-size:48px;letter-spacing:-3px;margin:17px 0}.tag{font-size:20px}.traits{gap:9px;font-size:8px;letter-spacing:3px;margin:28px 0}.line{width:55px}.curve{height:75px}
 .card{grid-template-columns:1fr;text-align:center;padding:30px 18px;gap:20px}.icon{margin:auto;width:78px;height:78px}.name{font-size:38px;white-space:normal}.meta{font-size:9px}.buy{height:66px;font-size:15px}
 .earth{height:180px}.bottom{padding:0 0 42px;gap:0}.bottom .line{display:none}.bottom-text{display:grid;grid-template-columns:auto auto auto;gap:7px 11px;white-space:normal;letter-spacing:3px;font-size:8px;line-height:1.9}.bottom-text span:nth-of-type(3){grid-column:1 / -1}.foot{flex-direction:column;gap:13px;text-align:center}.right{text-align:center}
 }
@@ -83,6 +83,8 @@ img,svg,video,canvas{max-width:100%;height:auto}
   .micro{font-size:8px;letter-spacing:2px}.bottom-text{font-size:7.5px;letter-spacing:2.4px;gap:5px 8px}
 }
 
+.bigx{font-style:normal!important;transform:none!important;display:block;text-align:center;margin-left:auto;margin-right:auto;}
+@media(max-width:760px){.bigx{font-size:125px;letter-spacing:-7px;line-height:.82;}}
 </style>
 </head>
 <body>
