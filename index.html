@@ -4,89 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>xDomain.in — Premium Domain Marketplace</title>
-<meta name="description" content="xDomain.in is a modern premium domain marketplace for buying and selling memorable domain names.">
+<meta name="description" content="xDomain.in — a modern marketplace to discover, buy and sell premium domain names.">
+<meta name="theme-color" content="#020b18">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#020817;--panel:#07152b;--panel2:#0b1d38;--line:rgba(86,170,255,.18);--blue:#168cff;--cyan:#35d8ff;--text:#f5faff;--muted:#91a8c4}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 50% -10%,#123d72 0,transparent 36%),linear-gradient(145deg,#01050f,#031124 58%,#020817);color:var(--text);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(40,140,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(40,140,255,.035) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#000,transparent 75%)}
-a{text-decoration:none;color:inherit}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:auto;padding:0 22px;position:relative;z-index:5}
-.logo{font-size:27px;font-weight:900;letter-spacing:-1.5px}.logo span{color:var(--cyan);text-shadow:0 0 22px #168cff}
-.navlinks{display:flex;gap:30px;color:#a9bdd5;font-size:14px}.navlinks a:hover{color:white}
-.navbtn{border:1px solid var(--line);padding:11px 17px;border-radius:12px;background:rgba(12,36,67,.7);font-size:13px}
-.hero{max-width:1180px;margin:auto;padding:92px 22px 72px;text-align:center;position:relative}
-.orb{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#087cff55,transparent 66%);filter:blur(8px);left:50%;top:10px;transform:translateX(-50%);animation:pulse 5s ease-in-out infinite}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #229cff44;background:#0b2444aa;border-radius:999px;color:#8bdfff;font-size:12px;position:relative}
-.dot{width:7px;height:7px;border-radius:50%;background:#35d8ff;box-shadow:0 0 14px #35d8ff}
-h1{font-size:clamp(48px,8vw,92px);line-height:.98;letter-spacing:-5px;margin:24px auto 20px;position:relative;max-width:920px;background:linear-gradient(180deg,#fff 20%,#a9d9ff 55%,#328eff);-webkit-background-clip:text;color:transparent;text-shadow:0 15px 60px #168cff22}
-.hero p{max-width:650px;margin:auto;color:var(--muted);font-size:17px;line-height:1.7;position:relative}
-.actions{display:flex;justify-content:center;gap:14px;margin-top:32px;position:relative}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:15px 24px;border-radius:14px;font-weight:800;font-size:14px;position:relative;overflow:hidden}
-.primary{background:linear-gradient(135deg,#087dff,#29c9ff);box-shadow:0 14px 45px #087dff45;border:1px solid #68ddff66}
-.primary:before{content:"";position:absolute;top:0;left:-90%;width:55%;height:100%;background:linear-gradient(100deg,transparent,#fff9,transparent);transform:skewX(-20deg);animation:shine 2.8s infinite}
-.secondary{border:1px solid var(--line);background:#081a31aa;color:#b9d1eb}
-.stats{max-width:850px;margin:45px auto 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:#06152a99;backdrop-filter:blur(18px);border-radius:20px;overflow:hidden;position:relative}
-.stat{padding:21px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{display:block;font-size:22px}.stat span{font-size:11px;color:#718aa7}
-.section{max-width:1180px;margin:auto;padding:65px 22px}.sectionhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.section h2{font-size:30px;letter-spacing:-1px}.sectionhead p{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.card{padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#0a1d37cc,#041126dd);box-shadow:inset 0 1px #ffffff08,0 20px 60px #0005;transform:translateY(0);transition:.3s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-7px);border-color:#229cff55;box-shadow:0 22px 70px #007eff25}
-.card:after{content:"";position:absolute;width:150px;height:150px;right:-80px;top:-80px;background:#078dff22;border-radius:50%;filter:blur(10px)}
-.domain{font-size:24px;font-weight:850;letter-spacing:-1px}.domain i{font-style:normal;color:#38cfff}
-.price{font-size:20px;margin:15px 0;color:white}.price small{font-size:11px;color:#7790ad}
-.cardrow{display:flex;justify-content:space-between;align-items:center;color:#7892af;font-size:11px}.mini{padding:9px 12px;border-radius:10px;background:#0b4e91;color:#dff5ff;font-weight:700}
-.featuregrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{padding:22px;border:1px solid var(--line);border-radius:18px;background:#06162b99}.icon{font-size:25px;margin-bottom:12px}.feature b{font-size:14px}.feature p{color:#7189a6;font-size:12px;line-height:1.6;margin-top:7px}
-.cta{margin:20px 22px 70px;padding:55px 25px;text-align:center;border:1px solid #299fff35;border-radius:28px;background:radial-gradient(circle at 50% 0,#087dff22,transparent 55%),#06162bcc;box-shadow:0 25px 100px #007eff12}.cta h2{font-size:38px;letter-spacing:-2px}.cta p{color:var(--muted);margin:10px auto 25px;max-width:530px;font-size:14px}
-footer{border-top:1px solid var(--line);padding:25px 22px;color:#647c98;font-size:11px;text-align:center}
-@keyframes shine{0%{left:-90%}55%,100%{left:135%}}@keyframes pulse{50%{transform:translateX(-50%) scale(1.12);opacity:.75}}
-@media(max-width:760px){.navlinks{display:none}.hero{padding-top:70px}h1{letter-spacing:-3px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.grid,.featuregrid{grid-template-columns:1fr}.section{padding-top:48px}.sectionhead{display:block}.sectionhead p{margin-top:7px}.actions{flex-direction:column;max-width:290px;margin-left:auto;margin-right:auto}.btn{width:100%}}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f5f9ff;background:#020914;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background:linear-gradient(rgba(38,145,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(38,145,255,.035) 1px,transparent 1px);background-size:56px 56px}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,calc(100% - 36px));margin:auto}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;background:rgba(2,9,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(65,164,255,.10)}
+.logo{font-size:25px;font-weight:900;letter-spacing:-1.3px}.logo em{font-style:normal;color:#29c8ff;text-shadow:0 0 20px #168cff88}
+.navlinks{display:flex;gap:28px;color:#8ea7c2;font-size:13px}.navlinks a{transition:color .2s}.navlinks a:hover{color:#fff}
+.navcta{padding:10px 15px;border:1px solid rgba(62,174,255,.22);border-radius:11px;background:#07182d;font-size:12px;font-weight:700}
+.hero{min-height:690px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:90px 0 75px}
+.glow{position:absolute;left:50%;top:45px;width:min(650px,90vw);height:470px;transform:translateX(-50%);background:radial-gradient(ellipse,#087fff30 0%,#0759aa14 36%,transparent 70%);filter:blur(14px);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #2aaaff2e;border-radius:999px;background:#061a31;color:#91dcff;font-size:11px;font-weight:700}
+.pulse{width:6px;height:6px;border-radius:50%;background:#27c8ff;box-shadow:0 0 15px #27c8ff;animation:blink 1.8s ease-in-out infinite}
+h1{font-size:clamp(48px,8vw,86px);line-height:.98;letter-spacing:-5px;margin:24px auto 20px;max-width:900px;background:linear-gradient(180deg,#fff 15%,#bfe8ff 55%,#3698ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{max-width:650px;margin:auto;color:#91a8c1;line-height:1.7;font-size:16px}
+.buttons{display:flex;justify-content:center;gap:12px;margin-top:30px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-width:155px;padding:14px 22px;border-radius:13px;font-size:13px;font-weight:800;transition:transform .22s,box-shadow .22s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#087bff,#22c8ff);box-shadow:0 12px 40px #087bff38;border:1px solid #72e2ff55}
+.primary:after{content:"";position:absolute;inset:0;width:45%;background:linear-gradient(105deg,transparent,#fff9,transparent);transform:skewX(-20deg) translateX(-160%);animation:shine 3.2s ease-in-out infinite}
+.secondary{background:#07182d;border:1px solid #3c9ce92b;color:#c7ddf3}
+.section{padding:82px 0}
+.heading{margin-bottom:28px}.heading h2{margin:0;font-size:29px;letter-spacing:-1.3px}.heading p{margin:8px 0 0;color:#708aa6;font-size:13px}
+.empty{border:1px dashed #2f8fdc35;border-radius:22px;padding:55px 25px;text-align:center;background:#06132680}
+.empty .mark{font-size:34px;margin-bottom:14px;color:#2bc9ff}.empty h3{margin:0 0 8px;font-size:18px}.empty p{margin:0 auto;color:#7189a5;max-width:520px;font-size:13px;line-height:1.65}
+.sell{margin:10px 0 80px;padding:62px 25px;text-align:center;border:1px solid #2b9cff2b;border-radius:26px;background:radial-gradient(circle at 50% 0,#087fff1c,transparent 58%),#061529;box-shadow:0 25px 90px #007dff0c}
+.sell h2{font-size:36px;letter-spacing:-2px;margin:0 0 10px}.sell p{max-width:560px;margin:0 auto 25px;color:#8199b2;line-height:1.7;font-size:13px}
+footer{border-top:1px solid #2e8bd51b;padding:26px 0;text-align:center;color:#5d7691;font-size:11px}
+@keyframes shine{0%,15%{transform:skewX(-20deg) translateX(-160%)}55%,100%{transform:skewX(-20deg) translateX(300%)}}
+@keyframes blink{50%{opacity:.45;box-shadow:0 0 5px #27c8ff}}
+@media(max-width:700px){
+.container{width:min(100% - 28px,1120px)}
+.nav{height:66px}.navlinks{display:none}.navcta{padding:9px 12px}
+.hero{min-height:620px;padding:70px 0 55px}
+h1{font-size:clamp(44px,14vw,68px);letter-spacing:-3.5px}
+.hero-copy{font-size:14px}.buttons{flex-direction:column;width:min(290px,100%);margin:27px auto 0}
+.btn{width:100%}.section{padding:62px 0}.sell{margin-bottom:55px;padding:48px 18px}.sell h2{font-size:29px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.primary:after,.pulse{animation:none}.btn{transition:none}}
 </style>
 </head>
 <body>
 <header class="nav">
-  <a class="logo" href="#">x<span>Domain</span>.in</a>
-  <nav class="navlinks"><a href="#domains">Domains</a><a href="#why">Why xDomain</a><a href="#sell">Sell a Domain</a></nav>
-  <a class="navbtn" href="#sell">List Domain</a>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+    <a class="logo" href="#top">x<em>Domain</em>.in</a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#domains">Domains</a>
+      <a href="#sell">Sell a Domain</a>
+    </nav>
+    <a class="navcta" href="#sell">List Domain</a>
+  </div>
 </header>
 
-<main>
+<main id="top">
 <section class="hero">
-  <div class="orb"></div>
-  <div class="badge"><span class="dot"></span> Premium domain marketplace</div>
-  <h1>Own a name that<br>moves your brand.</h1>
-  <p>Discover premium domains built for ambitious businesses. Buy memorable names, secure your brand, and launch with confidence.</p>
-  <div class="actions"><a class="btn primary" href="#domains">Explore Domains</a><a class="btn secondary" href="#sell">Sell Your Domain</a></div>
-  <div class="stats"><div class="stat"><b>10K+</b><span>Premium domains</span></div><div class="stat"><b>150+</b><span>Categories</span></div><div class="stat"><b>24/7</b><span>Marketplace access</span></div></div>
+  <div class="glow"></div>
+  <div class="hero-inner container">
+    <div class="pill"><span class="pulse"></span> Premium Domain Marketplace</div>
+    <h1>Find the name<br>behind your next idea.</h1>
+    <p class="hero-copy">Discover memorable domain names for your next brand, startup or project — or list your own premium domain for serious buyers.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#domains">Explore Domains</a>
+      <a class="btn secondary" href="#sell">Sell Your Domain</a>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="domains">
- <div class="sectionhead"><div><h2>Featured domains</h2><p>Hand-picked names ready for your next big idea.</p></div></div>
- <div class="grid">
-  <article class="card"><div class="domain">Nova<span>ly</span>.com</div><div class="price">$8,500 <small>Buy Now</small></div><div class="cardrow"><span>Technology</span><a class="mini" href="#sell">View</a></div></article>
-  <article class="card"><div class="domain">Brand<span>ora</span>.com</div><div class="price">$5,900 <small>Buy Now</small></div><div class="cardrow"><span>Business</span><a class="mini" href="#sell">View</a></div></article>
-  <article class="card"><div class="domain">Fin<span>vero</span>.com</div><div class="price">$12,400 <small>Buy Now</small></div><div class="cardrow"><span>Finance</span><a class="mini" href="#sell">View</a></div></article>
-  <article class="card"><div class="domain">Cloud<span>zen</span>.io</div><div class="price">$4,250 <small>Buy Now</small></div><div class="cardrow"><span>Cloud</span><a class="mini" href="#sell">View</a></div></article>
-  <article class="card"><div class="domain">Velo<span>ra</span>.co</div><div class="price">$3,800 <small>Buy Now</small></div><div class="cardrow"><span>Consumer</span><a class="mini" href="#sell">View</a></div></article>
-  <article class="card"><div class="domain">Med<span>ixa</span>.com</div><div class="price">$9,750 <small>Buy Now</small></div><div class="cardrow"><span>Healthcare</span><a class="mini" href="#sell">View</a></div></article>
+ <div class="container">
+  <div class="heading">
+   <h2>Domain marketplace</h2>
+   <p>Real listings will appear here when domains are added.</p>
+  </div>
+  <div class="empty">
+   <div class="mark">◇</div>
+   <h3>No domains listed yet</h3>
+   <p>xDomain.in is ready for your inventory. Add your genuine domain listings here with their actual price, extension and secure purchase link.</p>
+  </div>
  </div>
 </section>
 
-<section class="section" id="why">
- <div class="sectionhead"><div><h2>Built for domain buyers & sellers</h2><p>A clean marketplace experience with everything in one place.</p></div></div>
- <div class="featuregrid">
-  <div class="feature"><div class="icon">◈</div><b>Premium names</b><p>Curated brandable domains with strong commercial potential.</p></div>
-  <div class="feature"><div class="icon">⚡</div><b>Fast discovery</b><p>Find the right name quickly with a modern, focused experience.</p></div>
-  <div class="feature"><div class="icon">◇</div><b>Secure deals</b><p>Designed around transparent pricing and trusted transactions.</p></div>
-  <div class="feature"><div class="icon">↗</div><b>Built to grow</b><p>Names that can evolve with your business for years to come.</p></div>
+<section class="container">
+ <div class="sell" id="sell">
+  <h2>Have a premium domain?</h2>
+  <p>List your domain on xDomain.in and put it in front of businesses searching for a memorable digital brand.</p>
+  <a class="btn primary" href="mailto:sales@xdomain.in">List Your Domain</a>
  </div>
-</section>
-
-<section class="cta" id="sell">
- <h2>Have a premium domain?</h2>
- <p>Put your domain in front of businesses looking for their next brand. Start building your listing on xDomain.in.</p>
- <a class="btn primary" href="mailto:sales@xdomain.in">List Your Domain</a>
 </section>
 </main>
 
