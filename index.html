@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>xDomain.in — Premium Domain Marketplace</title>
+<meta name="description" content="xDomain.in is a modern premium domain marketplace for buying and selling memorable domain names.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#020817;--panel:#07152b;--panel2:#0b1d38;--line:rgba(86,170,255,.18);--blue:#168cff;--cyan:#35d8ff;--text:#f5faff;--muted:#91a8c4}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 50% -10%,#123d72 0,transparent 36%),linear-gradient(145deg,#01050f,#031124 58%,#020817);color:var(--text);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(40,140,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(40,140,255,.035) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#000,transparent 75%)}
+a{text-decoration:none;color:inherit}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:auto;padding:0 22px;position:relative;z-index:5}
+.logo{font-size:27px;font-weight:900;letter-spacing:-1.5px}.logo span{color:var(--cyan);text-shadow:0 0 22px #168cff}
+.navlinks{display:flex;gap:30px;color:#a9bdd5;font-size:14px}.navlinks a:hover{color:white}
+.navbtn{border:1px solid var(--line);padding:11px 17px;border-radius:12px;background:rgba(12,36,67,.7);font-size:13px}
+.hero{max-width:1180px;margin:auto;padding:92px 22px 72px;text-align:center;position:relative}
+.orb{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#087cff55,transparent 66%);filter:blur(8px);left:50%;top:10px;transform:translateX(-50%);animation:pulse 5s ease-in-out infinite}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #229cff44;background:#0b2444aa;border-radius:999px;color:#8bdfff;font-size:12px;position:relative}
+.dot{width:7px;height:7px;border-radius:50%;background:#35d8ff;box-shadow:0 0 14px #35d8ff}
+h1{font-size:clamp(48px,8vw,92px);line-height:.98;letter-spacing:-5px;margin:24px auto 20px;position:relative;max-width:920px;background:linear-gradient(180deg,#fff 20%,#a9d9ff 55%,#328eff);-webkit-background-clip:text;color:transparent;text-shadow:0 15px 60px #168cff22}
+.hero p{max-width:650px;margin:auto;color:var(--muted);font-size:17px;line-height:1.7;position:relative}
+.actions{display:flex;justify-content:center;gap:14px;margin-top:32px;position:relative}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:15px 24px;border-radius:14px;font-weight:800;font-size:14px;position:relative;overflow:hidden}
+.primary{background:linear-gradient(135deg,#087dff,#29c9ff);box-shadow:0 14px 45px #087dff45;border:1px solid #68ddff66}
+.primary:before{content:"";position:absolute;top:0;left:-90%;width:55%;height:100%;background:linear-gradient(100deg,transparent,#fff9,transparent);transform:skewX(-20deg);animation:shine 2.8s infinite}
+.secondary{border:1px solid var(--line);background:#081a31aa;color:#b9d1eb}
+.stats{max-width:850px;margin:45px auto 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:#06152a99;backdrop-filter:blur(18px);border-radius:20px;overflow:hidden;position:relative}
+.stat{padding:21px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{display:block;font-size:22px}.stat span{font-size:11px;color:#718aa7}
+.section{max-width:1180px;margin:auto;padding:65px 22px}.sectionhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.section h2{font-size:30px;letter-spacing:-1px}.sectionhead p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#0a1d37cc,#041126dd);box-shadow:inset 0 1px #ffffff08,0 20px 60px #0005;transform:translateY(0);transition:.3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-7px);border-color:#229cff55;box-shadow:0 22px 70px #007eff25}
+.card:after{content:"";position:absolute;width:150px;height:150px;right:-80px;top:-80px;background:#078dff22;border-radius:50%;filter:blur(10px)}
+.domain{font-size:24px;font-weight:850;letter-spacing:-1px}.domain i{font-style:normal;color:#38cfff}
+.price{font-size:20px;margin:15px 0;color:white}.price small{font-size:11px;color:#7790ad}
+.cardrow{display:flex;justify-content:space-between;align-items:center;color:#7892af;font-size:11px}.mini{padding:9px 12px;border-radius:10px;background:#0b4e91;color:#dff5ff;font-weight:700}
+.featuregrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{padding:22px;border:1px solid var(--line);border-radius:18px;background:#06162b99}.icon{font-size:25px;margin-bottom:12px}.feature b{font-size:14px}.feature p{color:#7189a6;font-size:12px;line-height:1.6;margin-top:7px}
+.cta{margin:20px 22px 70px;padding:55px 25px;text-align:center;border:1px solid #299fff35;border-radius:28px;background:radial-gradient(circle at 50% 0,#087dff22,transparent 55%),#06162bcc;box-shadow:0 25px 100px #007eff12}.cta h2{font-size:38px;letter-spacing:-2px}.cta p{color:var(--muted);margin:10px auto 25px;max-width:530px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:25px 22px;color:#647c98;font-size:11px;text-align:center}
+@keyframes shine{0%{left:-90%}55%,100%{left:135%}}@keyframes pulse{50%{transform:translateX(-50%) scale(1.12);opacity:.75}}
+@media(max-width:760px){.navlinks{display:none}.hero{padding-top:70px}h1{letter-spacing:-3px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.grid,.featuregrid{grid-template-columns:1fr}.section{padding-top:48px}.sectionhead{display:block}.sectionhead p{margin-top:7px}.actions{flex-direction:column;max-width:290px;margin-left:auto;margin-right:auto}.btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#">x<span>Domain</span>.in</a>
+  <nav class="navlinks"><a href="#domains">Domains</a><a href="#why">Why xDomain</a><a href="#sell">Sell a Domain</a></nav>
+  <a class="navbtn" href="#sell">List Domain</a>
+</header>
+
+<main>
+<section class="hero">
+  <div class="orb"></div>
+  <div class="badge"><span class="dot"></span> Premium domain marketplace</div>
+  <h1>Own a name that<br>moves your brand.</h1>
+  <p>Discover premium domains built for ambitious businesses. Buy memorable names, secure your brand, and launch with confidence.</p>
+  <div class="actions"><a class="btn primary" href="#domains">Explore Domains</a><a class="btn secondary" href="#sell">Sell Your Domain</a></div>
+  <div class="stats"><div class="stat"><b>10K+</b><span>Premium domains</span></div><div class="stat"><b>150+</b><span>Categories</span></div><div class="stat"><b>24/7</b><span>Marketplace access</span></div></div>
+</section>
+
+<section class="section" id="domains">
+ <div class="sectionhead"><div><h2>Featured domains</h2><p>Hand-picked names ready for your next big idea.</p></div></div>
+ <div class="grid">
+  <article class="card"><div class="domain">Nova<span>ly</span>.com</div><div class="price">$8,500 <small>Buy Now</small></div><div class="cardrow"><span>Technology</span><a class="mini" href="#sell">View</a></div></article>
+  <article class="card"><div class="domain">Brand<span>ora</span>.com</div><div class="price">$5,900 <small>Buy Now</small></div><div class="cardrow"><span>Business</span><a class="mini" href="#sell">View</a></div></article>
+  <article class="card"><div class="domain">Fin<span>vero</span>.com</div><div class="price">$12,400 <small>Buy Now</small></div><div class="cardrow"><span>Finance</span><a class="mini" href="#sell">View</a></div></article>
+  <article class="card"><div class="domain">Cloud<span>zen</span>.io</div><div class="price">$4,250 <small>Buy Now</small></div><div class="cardrow"><span>Cloud</span><a class="mini" href="#sell">View</a></div></article>
+  <article class="card"><div class="domain">Velo<span>ra</span>.co</div><div class="price">$3,800 <small>Buy Now</small></div><div class="cardrow"><span>Consumer</span><a class="mini" href="#sell">View</a></div></article>
+  <article class="card"><div class="domain">Med<span>ixa</span>.com</div><div class="price">$9,750 <small>Buy Now</small></div><div class="cardrow"><span>Healthcare</span><a class="mini" href="#sell">View</a></div></article>
+ </div>
+</section>
+
+<section class="section" id="why">
+ <div class="sectionhead"><div><h2>Built for domain buyers & sellers</h2><p>A clean marketplace experience with everything in one place.</p></div></div>
+ <div class="featuregrid">
+  <div class="feature"><div class="icon">◈</div><b>Premium names</b><p>Curated brandable domains with strong commercial potential.</p></div>
+  <div class="feature"><div class="icon">⚡</div><b>Fast discovery</b><p>Find the right name quickly with a modern, focused experience.</p></div>
+  <div class="feature"><div class="icon">◇</div><b>Secure deals</b><p>Designed around transparent pricing and trusted transactions.</p></div>
+  <div class="feature"><div class="icon">↗</div><b>Built to grow</b><p>Names that can evolve with your business for years to come.</p></div>
+ </div>
+</section>
+
+<section class="cta" id="sell">
+ <h2>Have a premium domain?</h2>
+ <p>Put your domain in front of businesses looking for their next brand. Start building your listing on xDomain.in.</p>
+ <a class="btn primary" href="mailto:sales@xdomain.in">List Your Domain</a>
+</section>
+</main>
+
+<footer>© 2026 xDomain.in — Premium Domain Marketplace</footer>
+</body>
+</html>
