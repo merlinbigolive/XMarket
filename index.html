@@ -11,7 +11,7 @@
 body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 50% 0,#0759c844,transparent 32%),radial-gradient(circle at 50% 62%,#006dff12,transparent 40%),#020914}
 body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.16;background:linear-gradient(90deg,transparent 49.8%,#159cff10 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,#159cff10 50%,transparent 50.2%);background-size:64px 64px}
 .wrap{width:min(1110px,calc(100% - 42px));margin:auto}
-header{height:122px;display:flex;align-items:center;border-bottom:1px solid #159cff22;background:#020914cc;backdrop-filter:blur(14px)}
+header{height:92px;display:flex;align-items:center;border-bottom:1px solid #159cff22;background:#020914cc;backdrop-filter:blur(14px)}
 .head{display:flex;align-items:center;justify-content:space-between}.logo{font-size:34px;font-weight:900;letter-spacing:-2.2px;text-decoration:none;border:0;border-bottom:0;box-shadow:none;outline:0}.logo b{color:#16bfff;text-decoration:none;border:0}.logo .c{color:#ffffff;text-decoration:none;border:0}.logo .i{color:#16bfff;text-decoration:none;border:0}
 .trust{display:flex;gap:14px;align-items:center;color:#c1d0e3;font-size:14px}.shield{width:25px;height:25px;border:2px solid #1daaff;border-radius:7px;display:grid;place-items:center;color:#31caff;font-size:14px}
 .hero{text-align:center;padding:48px 0 35px;position:relative}.hero:before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:760px;height:420px;background:radial-gradient(circle,#006eff2c,transparent 66%);filter:blur(12px);z-index:-1}
@@ -86,94 +86,16 @@ img,svg,video,canvas{max-width:100%;height:auto}
 .bigx{font-style:normal!important;transform:none!important;display:block;text-align:center;margin-left:auto;margin-right:auto;}
 @media(max-width:760px){.bigx{font-size:125px;letter-spacing:-7px;line-height:.82;}}
 </style>
-
-<style>
-.head-left{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.tld-wrap{position:relative}.tld-btn{border:1px solid #19baff;border-radius:14px;padding:10px 14px;background:linear-gradient(110deg,#06172d,#083d70);color:#fff;font-weight:900;font-size:11px;letter-spacing:1.4px;box-shadow:0 0 18px #008cff33;cursor:pointer}.tld-btn span{color:#20c8ff;margin-left:7px}.tld-menu{display:none;position:absolute;top:48px;left:0;min-width:150px;padding:9px;background:#041326;border:1px solid #18baff;border-radius:14px;box-shadow:0 15px 35px #0008;z-index:20}.tld-menu.open{display:block;animation:tldIn .16s ease-out}.tld-btn{min-width:132px}.tld-menu label span{font-size:13px}.tld-menu input{cursor:pointer}@keyframes tldIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}.tld-menu label{display:flex;align-items:center;gap:9px;padding:10px;color:#fff;font-weight:800;cursor:pointer}.tld-menu input{accent-color:#16bfff;width:17px;height:17px}.pager{display:flex;justify-content:center;align-items:center;gap:9px;margin:5px 0 45px}.pager button{border:1px solid #19baff;background:#06172d;color:#fff;border-radius:10px;padding:9px 13px;cursor:pointer}.pager button.active{background:#0a7cff;box-shadow:0 0 18px #008cff55}.empty{text-align:center;color:#9db5ce;padding:35px}.page-info{color:#74cfff;font-size:11px;letter-spacing:2px;margin:0 7px}@media(max-width:760px){header{height:116px}.head-left{gap:6px}.tld-btn{font-size:9px;padding:8px 9px}.tld-menu{right:0;left:auto}.pager{margin-bottom:30px}}
-</style>
-<script>
-const domains=[
-  {name:'Be<span class="blue">Grow</span>.in',plain:'begrow.in',icon:'BG',meta:'Short &nbsp; • &nbsp; Brandable &nbsp; • &nbsp; Premium',url:'https://sedo.com/search/details/?domain=begrow.in'},
-  {name:'DropMeNow<span class="blue">.xyz</span>',plain:'dropmenow.xyz',icon:'DN',meta:'Short &nbsp; • &nbsp; Catchy &nbsp; • &nbsp; Premium',url:'https://sedo.com/search/details/?domain=dropmenow.xyz'}
-];
-let selectedTld='in',currentPage=1;
-const perPage=10;
-
-function toggleTld(){
-  const menu=document.getElementById('tldMenu');
-  if(menu) menu.classList.toggle('open');
-}
-
-function updateTldButton(){
-  const btn=document.querySelector('.tld-btn');
-  if(!btn) return;
-  btn.innerHTML = selectedTld ? `TLD: .${selectedTld.toUpperCase()} <span>⌄</span>` : 'SELECT TLD <span>⌄</span>';
-}
-
-function setTld(cb){
-  document.querySelectorAll('.tld-menu input').forEach(x=>{
-    if(x!==cb) x.checked=false;
-  });
-  selectedTld=cb.checked ? cb.value : null;
-  currentPage=1;
-  updateTldButton();
-  render();
-  // Keep the selected state visible briefly, then close.
-  window.clearTimeout(window.tldCloseTimer);
-  window.tldCloseTimer=window.setTimeout(()=>{
-    const menu=document.getElementById('tldMenu');
-    if(menu) menu.classList.remove('open');
-  },1200);
-}
-
-function render(){
-  const list=document.getElementById('domainList');
-  const pager=document.getElementById('pager');
-  if(!list || !pager) return;
-
-  const filtered=domains.filter(d=>!selectedTld || d.plain.toLowerCase().endsWith('.'+selectedTld));
-  const pages=Math.max(1,Math.ceil(filtered.length/perPage));
-  currentPage=Math.min(Math.max(currentPage,1),pages);
-  const start=(currentPage-1)*perPage;
-  const rows=filtered.slice(start,start+perPage);
-
-  list.innerHTML=rows.length ? rows.map(d=>`<article class="card"><div class="icon">${d.icon}</div><div><div class="name">${d.name}</div><div class="meta">${d.meta}</div></div><a class="buy" href="${d.url}" target="_blank" rel="noopener"><span>↗ &nbsp; Buy This Domain<br><small>on Sedo &nbsp; →</small></span></a></article>`).join('') : '<div class="empty">No domains available for this TLD.</div>';
-
-  let pg='';
-  if(pages>1){
-    pg+=`<button onclick="go(${currentPage-1})" ${currentPage===1?'disabled':''}>←</button>`;
-    for(let i=1;i<=pages;i++) pg+=`<button class="${i===currentPage?'active':''}" onclick="go(${i})">${i}</button>`;
-    pg+=`<span class="page-info">Page ${currentPage}</span><button onclick="go(${currentPage+1})" ${currentPage===pages?'disabled':''}>Next →</button>`;
-  }
-  pager.innerHTML=pg;
-}
-
-function go(p){
-  currentPage=p;
-  render();
-  const section=document.querySelector('.domains');
-  if(section) window.scrollTo({top:section.offsetTop-20,behavior:'smooth'});
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  const initial=document.querySelector('.tld-menu input[value="in"]');
-  if(initial) initial.checked=true;
-  updateTldButton();
-  render();
-  document.addEventListener('click',e=>{
-    if(!e.target.closest('.tld-wrap')){
-      const menu=document.getElementById('tldMenu');
-      if(menu) menu.classList.remove('open');
-    }
-  });
-});
-</script>
 </head>
 <body>
-<header><div class="wrap head"><div class="head-left"><a class="logo" href="#"><b>x</b><span class="c">Domain</span><b>.</b><span class="i">in</span></a><div class="tld-wrap"><button class="tld-btn" type="button" onclick="toggleTld()">SELECT TLD <span>⌄</span></button><div class="tld-menu" id="tldMenu"><label><input type="checkbox" value="in" onchange="setTld(this)"> <span>.in</span></label><label><input type="checkbox" value="com" onchange="setTld(this)"> <span>.com</span></label></div></div></div><div class="trust"><span class="shield">✓</span> Secure <b>|</b> Trusted <b>|</b> Global</div></div></header>
+<header><div class="wrap head"><a class="logo" href="#"><b>x</b><span class="c">Domain</span><b>.</b><span class="i">in</span></a><div class="trust"><span class="shield">✓</span> Secure <b>|</b> Trusted <b>|</b> Global</div></div></header>
 <main>
 <section class="hero"><div class="wrap"><div class="bigx">X</div><div class="brand"><span class="white">x</span><span class="blue">Domain.in</span></div><p class="tag">Buy premium domains for your brand<br><strong>at reasonable price.</strong></p><div class="traits"><span class="line"></span> PREMIUM <b>•</b> SIMPLE <b>•</b> SECURE <span class="line"></span></div></div></section>
 <div class="curve"></div>
-<section class="domains"><div class="wrap"><div id="domainList"></div><div class="pager" id="pager"></div></div></section>
+<section class="domains"><div class="wrap">
+<article class="card"><div class="icon">BG</div><div><div class="name">Be<span class="blue">Grow</span>.in</div><div class="meta">Short &nbsp; • &nbsp; Brandable &nbsp; • &nbsp; Premium</div></div><a class="buy" href="https://sedo.com/search/details/?domain=begrow.in" target="_blank" rel="noopener"><span>↗ &nbsp; Buy This Domain<br><small>on Sedo &nbsp; →</small></span></a></article>
+<article class="card"><div class="icon">DN</div><div><div class="name">DropMeNow<span class="blue">.xyz</span></div><div class="meta">Short &nbsp; • &nbsp; Catchy &nbsp; • &nbsp; Premium</div></div><a class="buy" href="https://sedo.com/search/details/?domain=dropmenow.xyz" target="_blank" rel="noopener"><span>↗ &nbsp; Buy This Domain<br><small>on Sedo &nbsp; →</small></span></a></article>
+</div></section>
 <div class="earth"></div>
 <div class="bottom"><span class="line"></span><div class="bottom-text"><span>BETTER DOMAINS</span><b>•</b><span>BIGGER BRANDS</span><b>•</b><span>WITH XDOMAIN.IN</span></div><span class="line"></span></div>
 </main>
