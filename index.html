@@ -86,16 +86,26 @@ img,svg,video,canvas{max-width:100%;height:auto}
 .bigx{font-style:normal!important;transform:none!important;display:block;text-align:center;margin-left:auto;margin-right:auto;}
 @media(max-width:760px){.bigx{font-size:125px;letter-spacing:-7px;line-height:.82;}}
 </style>
+
+<style>
+.head-left{display:flex;align-items:center;gap:18px}.tld-wrap{position:relative}.tld-btn{border:1px solid #19baff;border-radius:14px;padding:10px 14px;background:linear-gradient(110deg,#06172d,#083d70);color:#fff;font-weight:900;font-size:11px;letter-spacing:1.4px;box-shadow:0 0 18px #008cff33;cursor:pointer}.tld-btn span{color:#20c8ff;margin-left:7px}.tld-menu{display:none;position:absolute;top:48px;left:0;min-width:150px;padding:9px;background:#041326;border:1px solid #18baff;border-radius:14px;box-shadow:0 15px 35px #0008;z-index:20}.tld-menu.open{display:block}.tld-menu label{display:flex;align-items:center;gap:9px;padding:10px;color:#fff;font-weight:800;cursor:pointer}.tld-menu input{accent-color:#16bfff;width:17px;height:17px}.pager{display:flex;justify-content:center;align-items:center;gap:9px;margin:5px 0 45px}.pager button{border:1px solid #19baff;background:#06172d;color:#fff;border-radius:10px;padding:9px 13px;cursor:pointer}.pager button.active{background:#0a7cff;box-shadow:0 0 18px #008cff55}.empty{text-align:center;color:#9db5ce;padding:35px}.page-info{color:#74cfff;font-size:11px;letter-spacing:2px;margin:0 7px}@media(max-width:760px){.head-left{gap:9px}.tld-btn{font-size:9px;padding:8px 9px}.tld-menu{right:0;left:auto}.pager{margin-bottom:30px}}
+</style>
+<script>
+const domains=[{name:'Be<span class="blue">Grow</span>.in',plain:'begrow.in',icon:'BG',meta:'Short &nbsp; • &nbsp; Brandable &nbsp; • &nbsp; Premium',url:'https://sedo.com/search/details/?domain=begrow.in'},{name:'DropMeNow<span class="blue">.xyz</span>',plain:'dropmenow.xyz',icon:'DN',meta:'Short &nbsp; • &nbsp; Catchy &nbsp; • &nbsp; Premium',url:'https://sedo.com/search/details/?domain=dropmenow.xyz'}];
+let selectedTld=null,currentPage=1; const perPage=10;
+function toggleTld(){document.getElementById('tldMenu').classList.toggle('open')}
+function setTld(cb){document.querySelectorAll('.tld-menu input').forEach(x=>{if(x!==cb)x.checked=false});selectedTld=cb.checked?cb.value:null;currentPage=1;document.getElementById('tldMenu').classList.remove('open');render()}
+function render(){const filtered=domains.filter(d=>!selectedTld||d.plain.toLowerCase().endsWith('.'+selectedTld));const list=document.getElementById('domainList');const pages=Math.max(1,Math.ceil(filtered.length/perPage));currentPage=Math.min(currentPage,pages);const start=(currentPage-1)*perPage;const rows=filtered.slice(start,start+perPage);list.innerHTML=rows.length?rows.map(d=>`<article class="card"><div class="icon">${d.icon}</div><div><div class="name">${d.name}</div><div class="meta">${d.meta}</div></div><a class="buy" href="${d.url}" target="_blank" rel="noopener"><span>↗ &nbsp; Buy This Domain<br><small>on Sedo &nbsp; →</small></span></a></article>`).join(''):'<div class="empty">No domains available for this TLD.</div>';let p='';if(pages>1){p+=`<button onclick="go(${currentPage-1})" ${currentPage===1?'disabled':''}>←</button>`;for(let i=1;i<=pages;i++)p+=`<button class="${i===currentPage?'active':''}" onclick="go(${i})">${i}</button>`;p+=`<span class="page-info">Page ${currentPage}</span><button onclick="go(${currentPage+1})" ${currentPage===pages?'disabled':''}>Next →</button>`}document.getElementById('pager').innerHTML=p}
+function go(p){currentPage=p;render();window.scrollTo({top:document.querySelector('.domains').offsetTop-20,behavior:'smooth'})}
+document.addEventListener('click',e=>{if(!e.target.closest('.tld-wrap'))document.getElementById('tldMenu').classList.remove('open')});render();
+</script>
 </head>
 <body>
-<header><div class="wrap head"><a class="logo" href="#"><b>x</b><span class="c">Domain</span><b>.</b><span class="i">in</span></a><div class="trust"><span class="shield">✓</span> Secure <b>|</b> Trusted <b>|</b> Global</div></div></header>
+<header><div class="wrap head"><div class="head-left"><a class="logo" href="#"><b>x</b><span class="c">Domain</span><b>.</b><span class="i">in</span></a><div class="tld-wrap"><button class="tld-btn" type="button" onclick="toggleTld()">SELECT TLD <span>⌄</span></button><div class="tld-menu" id="tldMenu"><label><input type="checkbox" value="in" onchange="setTld(this)"> <span>.in</span></label><label><input type="checkbox" value="com" onchange="setTld(this)"> <span>.com</span></label></div></div></div><div class="trust"><span class="shield">✓</span> Secure <b>|</b> Trusted <b>|</b> Global</div></div></header>
 <main>
 <section class="hero"><div class="wrap"><div class="bigx">X</div><div class="brand"><span class="white">x</span><span class="blue">Domain.in</span></div><p class="tag">Buy premium domains for your brand<br><strong>at reasonable price.</strong></p><div class="traits"><span class="line"></span> PREMIUM <b>•</b> SIMPLE <b>•</b> SECURE <span class="line"></span></div></div></section>
 <div class="curve"></div>
-<section class="domains"><div class="wrap">
-<article class="card"><div class="icon">BG</div><div><div class="name">Be<span class="blue">Grow</span>.in</div><div class="meta">Short &nbsp; • &nbsp; Brandable &nbsp; • &nbsp; Premium</div></div><a class="buy" href="https://sedo.com/search/details/?domain=begrow.in" target="_blank" rel="noopener"><span>↗ &nbsp; Buy This Domain<br><small>on Sedo &nbsp; →</small></span></a></article>
-<article class="card"><div class="icon">DN</div><div><div class="name">DropMeNow<span class="blue">.xyz</span></div><div class="meta">Short &nbsp; • &nbsp; Catchy &nbsp; • &nbsp; Premium</div></div><a class="buy" href="https://sedo.com/search/details/?domain=dropmenow.xyz" target="_blank" rel="noopener"><span>↗ &nbsp; Buy This Domain<br><small>on Sedo &nbsp; →</small></span></a></article>
-</div></section>
+<section class="domains"><div class="wrap"><div id="domainList"></div><div class="pager" id="pager"></div></div></section>
 <div class="earth"></div>
 <div class="bottom"><span class="line"></span><div class="bottom-text"><span>BETTER DOMAINS</span><b>•</b><span>BIGGER BRANDS</span><b>•</b><span>WITH XDOMAIN.IN</span></div><span class="line"></span></div>
 </main>
